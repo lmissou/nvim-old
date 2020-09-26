@@ -19,6 +19,8 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 调试插件
 Plug 'puremourning/vimspector'
+" git插件
+Plug 'airblade/vim-gitgutter'
 " 主题
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
@@ -67,6 +69,8 @@ set nobackup
 set nowritebackup
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+" git
+let g:gitgutter_enabled = 1
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 " 左侧行号和错误提示共用

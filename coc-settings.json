@@ -26,6 +26,7 @@
         "value": "\uf89f",
         "variable": "\ue71b"
     },
+    "codeLens.enable": true,
     "explorer.icon.enableNerdfont": true,
     "explorer.keyMappings": {
         "h": "toggleSelection",
