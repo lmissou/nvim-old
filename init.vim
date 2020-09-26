@@ -17,6 +17,8 @@ call plug#begin(get(g:, 'bundle_home', s:home . '/bundles'))
 Plug 'mhinz/vim-startify'
 " 自动补全插件(支持LSP)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" 代码片段snippets
+Plug 'honza/vim-snippets'
 " 调试插件
 Plug 'puremourning/vimspector'
 " git插件
@@ -29,8 +31,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " 热键提示插件
 Plug 'liuchengxu/vim-which-key'
-" 全局搜索ctrlp插件
-Plug 'kien/ctrlp.vim'
+" 全局搜索leaderF插件
+Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 " editorconfig插件
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
@@ -48,6 +50,7 @@ set background=dark
 set number
 " 缓冲区未保存时也可以切换到后台
 set hidden
+set updatetime=300
 " 开启鼠标
 set mouse=a
 " 设置4空格缩进
@@ -71,6 +74,12 @@ set nowritebackup
 set shortmess+=c
 " git
 let g:gitgutter_enabled = 1
+" leaderF弹出窗口
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+" leaderF快捷键
+let g:Lf_ShortcutF = "<C-P>f"
+let g:Lf_ShortcutB = "<C-P>b"
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 " 左侧行号和错误提示共用

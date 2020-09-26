@@ -66,5 +66,11 @@
         "]c": "gitNext",
         "<<": "gitStage",
         ">>": "gitUnstage"
-    }
+    },
+    "snippets.ultisnips.enable": true,
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "$HOME/.config/nvim/Ultisnips",
+        "$HOME/.config/nvim/bundles/vim-snippets/UltiSnips"
+    ]
 }
