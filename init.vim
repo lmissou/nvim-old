@@ -19,12 +19,13 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 代码片段snippets
 Plug 'honza/vim-snippets'
+" 注释插件
+Plug 'scrooloose/nerdcommenter'
 " 调试插件
 Plug 'puremourning/vimspector'
 " git插件
 Plug 'airblade/vim-gitgutter'
 " 主题
-Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 " 美化底部状态栏
 Plug 'vim-airline/vim-airline'
@@ -43,9 +44,9 @@ call plug#end()
 " -----优化默认配置
 " -----
 " 设置主题
+set background=dark
 set t_Co=256
 colorscheme gruvbox
-set background=dark
 " 开启行号显示
 set number
 " 缓冲区未保存时也可以切换到后台
@@ -70,8 +71,12 @@ let g:ctrlp_working_path_mode = 'cr'
 " 不生成备份文件
 set nobackup
 set nowritebackup
+" 查找时忽略大小写
+set ic
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+" vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
 " git
 let g:gitgutter_enabled = 1
 " leaderF弹出窗口
@@ -166,6 +171,7 @@ nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
+    \ 's': [':Startify', '打开开始界面'],
     \ 'o': ['only', '仅保留当前窗口'],
     \ 'q': ['wq', '保存并退出'],
     \ }
