@@ -27,6 +27,7 @@ Plug 'puremourning/vimspector'
 Plug 'airblade/vim-gitgutter'
 " 主题
 Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 " 美化底部状态栏
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -38,15 +39,21 @@ Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
 Plug 'easymotion/vim-easymotion'
+" 包围，括号，引号插件
+Plug 'tpope/vim-surround'
+" 格式化插件
+Plug 'chiel92/vim-autoformat'
 call plug#end()
 
 " --------------------
 " -----优化默认配置
 " -----
 " 设置主题
-set background=dark
 set t_Co=256
-colorscheme gruvbox
+set background=light
+colorscheme one
+" 开启powerline字体
+let g:airline_powerline_fonts = 1
 " 开启行号显示
 set number
 " 缓冲区未保存时也可以切换到后台
