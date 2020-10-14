@@ -43,6 +43,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 " 格式化插件
 Plug 'chiel92/vim-autoformat'
+" markdown
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
 
 " --------------------
