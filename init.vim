@@ -94,6 +94,8 @@ let g:Lf_PreviewInPopup = 1
 " leaderF快捷键
 let g:Lf_ShortcutF = "<C-P>f"
 let g:Lf_ShortcutB = "<C-P>b"
+" markdown关闭自动预览
+let g:instant_markdown_autostart = 0
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 " 左侧行号和错误提示共用
