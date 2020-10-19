@@ -45,6 +45,8 @@ Plug 'tpope/vim-surround'
 Plug 'chiel92/vim-autoformat'
 " markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+" org-mode
+Plug 'jceb/vim-orgmode'
 call plug#end()
 
 " --------------------
@@ -68,8 +70,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-" 显示控制字符
-" set list listchars=tab:▸-,eol:↩︎,extends:❯,precedes:❮,trail:˽
 " 设置空白字符的视觉提示
 set list listchars=extends:❯,precedes:❮,tab:▸-,trail:˽
 " 高亮当前行和当前列
