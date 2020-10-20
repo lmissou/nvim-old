@@ -33,6 +33,8 @@ Plug 'rakr/vim-one'
 " 美化底部状态栏
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" icon支持
+Plug 'ryanoasis/vim-devicons'
 " 热键提示插件
 Plug 'liuchengxu/vim-which-key'
 " 全局搜索leaderF插件
@@ -65,6 +67,8 @@ set number
 " 缓冲区未保存时也可以切换到后台
 set hidden
 set updatetime=300
+" 设置utf8编码
+set encoding=UTF-8
 " 开启鼠标
 set mouse=a
 " 设置4空格缩进
