@@ -4,7 +4,7 @@ let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 exec 'set rtp+='.s:home
 
 " 设置leader键
-let g:mapleader="\<Space>"
+let g:mapleader=","
 
 " 定义一个命令用来加载文件
 command! -nargs=1 LoadScript exec 'so '.s:home.'/'.'<args>'
@@ -21,6 +21,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 " 注释插件
 Plug 'scrooloose/nerdcommenter'
+" 显示缩进线
+Plug 'yggdroot/indentline'
 " 调试插件
 Plug 'puremourning/vimspector'
 " git插件
@@ -156,10 +158,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " --------------------
 " -----快捷键
@@ -180,6 +178,11 @@ let g:which_key_map = {}
 " 设置快捷键
 nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+let g:which_key_map['a'] = 'Coc Code Action'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
     \ 's': [':Startify', '打开开始界面'],
@@ -198,9 +201,7 @@ let g:which_key_map['f'] = {
     \ 't': [':CocCommand explorer', '打开目录树'],
     \ }
 " 注册which-key按键映射
-call which_key#register('<Space>', "g:which_key_map")
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey '<M-Space>'<CR>
-vnoremap <silent> <localleader> :<c-u>WhichKeyVisual '<M-Space>'<CR>
+call which_key#register(',', "g:which_key_map")
+nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual ','<CR>
 
