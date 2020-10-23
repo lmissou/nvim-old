@@ -43,6 +43,8 @@ Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
 Plug 'easymotion/vim-easymotion'
+" minibufexpl.vim
+Plug 'fholgado/minibufexpl.vim'
 " 包围，括号，引号插件
 Plug 'tpope/vim-surround'
 " 格式化插件
