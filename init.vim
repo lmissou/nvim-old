@@ -57,6 +57,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " org-mode
 Plug 'jceb/vim-orgmode'
+" 有道翻译插件
+Plug 'ianva/vim-youdao-translater'
 call plug#end()
 
 " --------------------
@@ -229,13 +231,17 @@ nmap <silent> gr <Plug>(coc-references)
 " -----
 " insert模式自由移动
 " 移动到行首和行尾
-noremap <C-A> <Esc>^i
-noremap <C-E> <Esc>$a
+noremap <C-A> <Esc>^
+noremap <C-E> <Esc>$
 " 移动光标
 noremap <C-L> <Right>
 noremap <C-H> <Left>
 noremap <C-J> <Down>
 noremap <C-K> <Up>
+" 有道翻译
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
 
 " 开启vim-which-key热键提示
 let g:which_key_map = {}
