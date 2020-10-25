@@ -43,10 +43,12 @@ Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
 Plug 'easymotion/vim-easymotion'
-" minibufexpl.vim
-Plug 'fholgado/minibufexpl.vim'
+" 多光标插件
+Plug 'terryma/vim-multiple-cursors'
 " 包围，括号，引号插件
 Plug 'tpope/vim-surround'
+" rainbow彩虹括号插件
+Plug 'kien/rainbow_parentheses.vim'
 " 格式化插件
 Plug 'chiel92/vim-autoformat'
 " 自定义文本对象textobj
@@ -62,8 +64,8 @@ call plug#end()
 " -----
 " 设置主题
 set t_Co=256
-set background=light
-colorscheme one
+set background=dark
+colorscheme gruvbox
 " 开启powerline字体
 let g:airline_powerline_fonts = 1
 " 开启行号显示
@@ -94,6 +96,11 @@ set nowritebackup
 set ic
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+" 一直启用彩虹括号
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 " vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 " git
@@ -104,6 +111,11 @@ let g:Lf_PreviewInPopup = 1
 " leaderF快捷键
 let g:Lf_ShortcutF = "<C-P>f"
 let g:Lf_ShortcutB = "<C-P>b"
+" multiple-cursor快捷键设置
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 " markdown关闭自动预览
 let g:instant_markdown_autostart = 0
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -163,6 +175,7 @@ endfunction
 " -----
 let g:coc_global_extensions = [
     \ 'coc-highlight',
+    \ 'coc-pairs',
     \ 'coc-clangd',
     \ 'coc-actions',
     \ 'coc-css',
