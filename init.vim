@@ -133,25 +133,6 @@ endif
 " --------------------
 " -----自定义文本对象textobj配置
 " -----
-call textobj#user#plugin('datetime', {
-\   'date': {
-\     'pattern': '\<\d\d\d\d-\d\d-\d\d\>',
-\     'select': ['ad', 'id'],
-\   },
-\   'time': {
-\     'pattern': '\<\d\d:\d\d:\d\d\>',
-\     'select': ['at', 'it'],
-\   },
-\ })
-call textobj#user#plugin('line', {
-\   '-': {
-\     'select-a-function': 'CurrentLineA',
-\     'select-a': 'al',
-\     'select-i-function': 'CurrentLineI',
-\     'select-i': 'il',
-\   },
-\ })
-
 function! CurrentLineA()
   normal! 0
   let head_pos = getpos('.')
@@ -171,6 +152,33 @@ function! CurrentLineI()
   \ ? ['v', head_pos, tail_pos]
   \ : 0
 endfunction
+call textobj#user#plugin('datetime', {
+\   'date': {
+\     'pattern': '\<\d\d\d\d-\d\d-\d\d\>',
+\     'select': ['ad', 'id'],
+\   },
+\   'time': {
+\     'pattern': '\<\d\d:\d\d:\d\d\>',
+\     'select': ['at', 'it'],
+\   },
+\ })
+call textobj#user#plugin('line', {
+\   '-': {
+\     'select-a-function': 'CurrentLineA',
+\     'select-a': 'al',
+\     'select-i-function': 'CurrentLineI',
+\     'select-i': 'il',
+\   },
+\ })
+" coc定义的函数以及类的textobj
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " --------------------
 " -----coc配置
@@ -178,6 +186,7 @@ endfunction
 let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-pairs',
+    \ 'coc-go',
     \ 'coc-clangd',
     \ 'coc-actions',
     \ 'coc-css',
@@ -270,6 +279,13 @@ let g:which_key_map['b'] = {
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
     \ 't': [':CocCommand explorer', '打开目录树'],
+    \ }
+let g:which_key_map['l'] = {
+    \ 'name': '+编程语言',
+    \ 'a': ['<Plug>(coc-codeaction-selected)', 'CodeAction'],
+    \ 'r': ['<Plug>(coc-rename)', '重命名symbol'],
+    \ 'f': ['<Plug>(coc-format-selected)', '格式化代码'],
+    \ 'F': ['<Plug>(coc-fix-current)', '修复错误'],
     \ }
 " 注册which-key按键映射
 call which_key#register(',', "g:which_key_map")
