@@ -30,6 +30,7 @@ Plug 'airblade/vim-gitgutter'
 " 主题
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+Plug 'dracula/vim', { 'as': 'dracula' }
 " 美化底部状态栏
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -69,7 +70,7 @@ call plug#end()
 " 设置主题
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme dracula
 " 开启powerline字体
 let g:airline_powerline_fonts = 1
 " 开启行号显示
