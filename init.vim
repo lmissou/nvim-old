@@ -59,6 +59,8 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'jceb/vim-orgmode'
 " 有道翻译插件
 Plug 'ianva/vim-youdao-translater'
+" 切换buffer插件
+Plug 'sandeepcr529/buffet.vim'
 call plug#end()
 
 " --------------------
@@ -114,10 +116,7 @@ let g:Lf_PreviewInPopup = 1
 let g:Lf_ShortcutF = "<C-P>f"
 let g:Lf_ShortcutB = "<C-P>b"
 " multiple-cursor快捷键设置
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_key='<C-n>'
 " markdown关闭自动预览
 let g:instant_markdown_autostart = 0
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -258,11 +257,6 @@ let g:which_key_map = {}
 " 设置快捷键
 nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-let g:which_key_map['a'] = 'Coc Code Action'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
     \ 's': [':Startify', '打开开始界面'],
@@ -271,7 +265,7 @@ let g:which_key_map['w'] = {
     \ }
 let g:which_key_map['b'] = {
     \ 'name' : '+缓冲区',
-    \ 'a': ['buffers', '显示所有'],
+    \ 'b': ['Bufferlist', '显示所有'],
     \ 'd': ['bd', '关闭'],
     \ 'n': ['bnext', '下一个'],
     \ 'p': ['bprevious', '下一个'],
