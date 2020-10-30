@@ -1,13 +1,8 @@
 " 获取当前init.vim所在目录
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-" 将当前初始化目录加入runtimepath
-exec 'set rtp+='.s:home
 
 " 设置leader键
 let g:mapleader=","
-
-" 定义一个命令用来加载文件
-command! -nargs=1 LoadScript exec 'so '.s:home.'/'.'<args>'
 
 " --------------------
 " -----加载插件
@@ -38,7 +33,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 " 热键提示插件
 Plug 'liuchengxu/vim-which-key'
-" 全局搜索leaderF插件
+" 文件查找插件leaderf
 Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 " editorconfig插件
 Plug 'editorconfig/editorconfig-vim'
@@ -60,8 +55,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'jceb/vim-orgmode'
 " 有道翻译插件
 Plug 'ianva/vim-youdao-translater'
-" 切换buffer插件
-Plug 'sandeepcr529/buffet.vim'
 call plug#end()
 
 " --------------------
@@ -82,6 +75,8 @@ set updatetime=300
 set encoding=UTF-8
 " 开启鼠标
 set mouse=a
+" 自动切换路径
+set autochdir
 " 设置4空格缩进
 set tabstop=4
 set softtabstop=4
@@ -114,8 +109,10 @@ let g:gitgutter_enabled = 1
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 " leaderF快捷键
-let g:Lf_ShortcutF = "<C-P>f"
-let g:Lf_ShortcutB = "<C-P>b"
+let g:Lf_ShortcutF = "<C-P>"
+let g:Lf_ShortcutB = ""
+" ag配置始终从项目根目录开始搜索
+let g:ag_working_path_mode="r"
 " multiple-cursor快捷键设置
 let g:multi_cursor_start_key='<C-n>'
 " markdown关闭自动预览
@@ -258,6 +255,9 @@ let g:which_key_map = {}
 " 设置快捷键
 nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
+" 模糊搜索vim命令
+nnoremap <leader>: :CocList vimcommands<CR>
+let g:which_key_map[':'] = 'vim命令'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
     \ 's': [':Startify', '打开开始界面'],
@@ -266,7 +266,7 @@ let g:which_key_map['w'] = {
     \ }
 let g:which_key_map['b'] = {
     \ 'name' : '+缓冲区',
-    \ 'b': ['Bufferlist', '显示所有'],
+    \ 'b': [':CocList buffers', '显示所有'],
     \ 'd': ['bd', '关闭'],
     \ 'n': ['bnext', '下一个'],
     \ 'p': ['bprevious', '下一个'],
@@ -274,6 +274,7 @@ let g:which_key_map['b'] = {
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
     \ 't': [':CocCommand explorer', '打开目录树'],
+    \ 'f': [':CocList grep', '全局搜索'],
     \ }
 let g:which_key_map['l'] = {
     \ 'name': '+编程语言',
