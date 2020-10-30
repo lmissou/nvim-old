@@ -33,8 +33,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 " 热键提示插件
 Plug 'liuchengxu/vim-which-key'
-" 文件查找插件leaderf
-Plug 'yggdroot/leaderf', { 'do': './install.sh' }
 " editorconfig插件
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
@@ -108,9 +106,6 @@ let g:gitgutter_enabled = 1
 " leaderF弹出窗口
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-" leaderF快捷键
-let g:Lf_ShortcutF = "<C-P>"
-let g:Lf_ShortcutB = ""
 " ag配置始终从项目根目录开始搜索
 let g:ag_working_path_mode="r"
 " multiple-cursor快捷键设置
@@ -248,6 +243,8 @@ noremap <C-K> <Up>
 vnoremap <silent> <C-T> :<C-u>Ydv<CR>
 nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
+" 模糊搜索文件
+noremap <C-p> :CocList files<CR>
 
 " 开启vim-which-key热键提示
 let g:which_key_map = {}
