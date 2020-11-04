@@ -250,6 +250,7 @@ noremap <C-p> :CocList files<CR>
 let g:which_key_map = {}
 
 " 设置快捷键
+inoremap jk <Esc>
 nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
 " 模糊搜索vim命令
@@ -258,6 +259,8 @@ let g:which_key_map[':'] = 'vim命令'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
     \ 's': [':Startify', '打开开始界面'],
+    \ 'h': [':vsplit', '横向分割窗口'],
+    \ 'v': [':split', '纵向分割窗口'],
     \ 'o': ['only', '仅保留当前窗口'],
     \ 'q': ['wq', '保存并退出'],
     \ }
@@ -266,7 +269,7 @@ let g:which_key_map['b'] = {
     \ 'b': [':CocList buffers', '显示所有'],
     \ 'd': ['bd', '关闭'],
     \ 'n': ['bnext', '下一个'],
-    \ 'p': ['bprevious', '下一个'],
+    \ 'p': ['bprevious', '上一个'],
     \ }
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
