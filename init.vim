@@ -85,8 +85,6 @@ set list listchars=extends:❯,precedes:❮,tab:▸-,trail:˽
 " 高亮当前行和当前列
 set cursorline
 set cursorcolumn
-" ctrlp设置默认查找路径
-let g:ctrlp_working_path_mode = 'cr'
 " 不生成备份文件
 set nobackup
 set nowritebackup
@@ -103,11 +101,6 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:vimspector_enable_mappings = 'HUMAN'
 " git
 let g:gitgutter_enabled = 1
-" leaderF弹出窗口
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
-" ag配置始终从项目根目录开始搜索
-let g:ag_working_path_mode="r"
 " multiple-cursor快捷键设置
 let g:multi_cursor_start_key='<C-n>'
 " markdown关闭自动预览
