@@ -171,6 +171,7 @@ omap ac <Plug>(coc-classobj-a)
 let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-pairs',
+    \ 'coc-omnisharp',
     \ 'coc-go',
     \ 'coc-clangd',
     \ 'coc-actions',
@@ -267,7 +268,8 @@ let g:which_key_map['b'] = {
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
     \ 't': [':CocCommand explorer', '打开目录树'],
-    \ 'f': [':CocList grep', '全局搜索'],
+    \ 'f': [':CocList files', '全局搜索'],
+    \ 's': [':CocList grep', '全局搜索'],
     \ }
 let g:which_key_map['l'] = {
     \ 'name': '+编程语言',
