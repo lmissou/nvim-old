@@ -170,6 +170,7 @@ omap ac <Plug>(coc-classobj-a)
 " -----
 let g:coc_global_extensions = [
     \ 'coc-highlight',
+    \ 'coc-tabnine',
     \ 'coc-git',
     \ 'coc-template',
     \ 'coc-pairs',
