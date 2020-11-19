@@ -26,8 +26,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'yggdroot/indentline'
 " 调试插件
 Plug 'puremourning/vimspector'
-" git插件
-Plug 'airblade/vim-gitgutter'
 " 主题
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
@@ -105,8 +103,6 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:airline_section_x = '%{ScrollStatus()}'
 " vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-" git
-let g:gitgutter_enabled = 1
 " markdown关闭自动预览
 let g:instant_markdown_autostart = 0
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -174,6 +170,7 @@ omap ac <Plug>(coc-classobj-a)
 " -----
 let g:coc_global_extensions = [
     \ 'coc-highlight',
+    \ 'coc-git',
     \ 'coc-template',
     \ 'coc-pairs',
     \ 'coc-omnisharp',
