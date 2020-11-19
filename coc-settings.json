@@ -59,6 +59,11 @@
         "variable": "\ue71b"
     },
     "python.linting.pylintArgs": ["----extension-pkg-whitelist=1xml"],
+    "translator.engines": [
+        "youdao",
+        "bing",
+        "haici"
+    ],
     "snippets.ultisnips.enable": true,
     "snippets.ultisnips.directories": [
         "./ultisnips/"

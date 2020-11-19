@@ -51,8 +51,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " org-mode
 Plug 'jceb/vim-orgmode'
-" 有道翻译插件
-Plug 'ianva/vim-youdao-translater'
 call plug#end()
 
 " --------------------
@@ -176,6 +174,7 @@ let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-actions',
     \ 'coc-css',
+    \ 'coc-bookmark',
     \ 'coc-explorer',
     \ 'coc-gitignore',
     \ 'coc-html',
@@ -234,9 +233,8 @@ noremap <C-H> <Left>
 noremap <C-J> <Down>
 noremap <C-K> <Up>
 " 有道翻译
-vnoremap <silent> <C-T> :<C-u>Ydv<CR>
-nnoremap <silent> <C-T> :<C-u>Ydc<CR>
-noremap <leader>yd :<C-u>Yde<CR>
+vnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
+nnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 " 模糊搜索文件
 noremap <C-p> :CocList files<CR>
 
@@ -267,9 +265,17 @@ let g:which_key_map['b'] = {
     \ }
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
+    \ 'f': [':CocList files', '文件列表'],
+    \ 'r': [':CocList mru', '历史文件列表'],
     \ 't': [':CocCommand explorer', '打开目录树'],
-    \ 'f': [':CocList files', '全局搜索'],
     \ 's': [':CocList grep', '全局搜索'],
+    \ }
+let g:which_key_map['m'] = {
+    \ 'name': '+书签',
+    \ 'm': [':CocList bookmark', '书签列表'],
+    \ 'a': [':CocCommand bookmark.toggle', '添加/删除书签'],
+    \ 'p': [':CocCommand bookmark.prev', '上一个书签'],
+    \ 'n': [':CocCommand bookmark.next', '下一个书签'],
     \ }
 let g:which_key_map['l'] = {
     \ 'name': '+编程语言',
