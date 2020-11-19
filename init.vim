@@ -10,6 +10,10 @@ let g:mapleader=","
 call plug#begin(get(g:, 'bundle_home', s:home . '/bundles'))
 " 启动界面
 Plug 'mhinz/vim-startify'
+" 状态栏的滚动条
+Plug 'ojroques/vim-scrollstatus'
+" undotree
+Plug 'mbbill/undotree'
 " 自动补全插件(支持LSP)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 代码片段snippets
@@ -95,6 +99,8 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+" scrollbar
+let g:airline_section_x = '%{ScrollStatus()}'
 " vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 " git
@@ -166,6 +172,7 @@ omap ac <Plug>(coc-classobj-a)
 " -----
 let g:coc_global_extensions = [
     \ 'coc-highlight',
+    \ 'coc-template',
     \ 'coc-pairs',
     \ 'coc-omnisharp',
     \ 'coc-go',
@@ -230,11 +237,13 @@ noremap <C-L> <Right>
 noremap <C-H> <Left>
 noremap <C-J> <Down>
 noremap <C-K> <Up>
-" 有道翻译
+" 翻译
 vnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 nnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 " 模糊搜索文件
 noremap <C-p> :CocList files<CR>
+" undotree
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " 开启vim-which-key热键提示
 let g:which_key_map = {}
