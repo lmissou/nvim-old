@@ -38,7 +38,7 @@ Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
 Plug 'easymotion/vim-easymotion'
 " 多光标插件
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 " 自动切换工作目录
 Plug 'airblade/vim-rooter'
 " 包围，括号，引号插件
@@ -99,8 +99,6 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:vimspector_enable_mappings = 'HUMAN'
 " git
 let g:gitgutter_enabled = 1
-" multiple-cursor快捷键设置
-let g:multi_cursor_start_key='<C-n>'
 " markdown关闭自动预览
 let g:instant_markdown_autostart = 0
 " Always show the signcolumn, otherwise it would shift the text each time
