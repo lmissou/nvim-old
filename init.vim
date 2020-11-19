@@ -12,6 +12,8 @@ call plug#begin(get(g:, 'bundle_home', s:home . '/bundles'))
 Plug 'mhinz/vim-startify'
 " 状态栏的滚动条
 Plug 'ojroques/vim-scrollstatus'
+" 显示symbols和tags
+Plug 'liuchengxu/vista.vim'
 " undotree
 Plug 'mbbill/undotree'
 " 自动补全插件(支持LSP)
@@ -244,6 +246,8 @@ nnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 noremap <C-p> :CocList files<CR>
 " undotree
 nnoremap <leader>u :UndotreeToggle<CR>
+" vista
+nnoremap <leader>t :Vista!!<CR>
 
 " 开启vim-which-key热键提示
 let g:which_key_map = {}
