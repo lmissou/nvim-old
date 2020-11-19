@@ -39,6 +39,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
 " 多光标插件
 Plug 'terryma/vim-multiple-cursors'
+" 自动切换工作目录
+Plug 'airblade/vim-rooter'
 " 包围，括号，引号插件
 Plug 'tpope/vim-surround'
 " rainbow彩虹括号插件
@@ -71,8 +73,6 @@ set updatetime=300
 set encoding=UTF-8
 " 开启鼠标
 set mouse=a
-" 自动切换路径
-set autochdir
 " 设置4空格缩进
 set tabstop=4
 set softtabstop=4
