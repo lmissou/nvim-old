@@ -26,6 +26,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'yggdroot/indentline'
 " 调试插件
 Plug 'puremourning/vimspector'
+" vimspector配置文件模板生成
+Plug 'lmissou/vimspector-template'
 " 主题
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'

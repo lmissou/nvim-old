@@ -66,6 +66,8 @@
     ],
     "snippets.ultisnips.enable": true,
     "snippets.ultisnips.directories": [
-        "./ultisnips/"
-    ]
+        "./ultisnips/",
+        "./bundles/vimspector-template/UltiSnips/"
+    ],
+    "git.enableGutters": true
 }
