@@ -232,15 +232,6 @@ nmap <silent> gr <Plug>(coc-references)
 " --------------------
 " -----快捷键
 " -----
-" insert模式自由移动
-" 移动到行首和行尾
-noremap <C-A> <Esc>^
-noremap <C-E> <Esc>$
-" 移动光标
-noremap <C-L> <Right>
-noremap <C-H> <Left>
-noremap <C-J> <Down>
-noremap <C-K> <Up>
 " 翻译
 vnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 nnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
