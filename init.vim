@@ -14,6 +14,8 @@ Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-scrollstatus'
 " 显示symbols和tags
 Plug 'liuchengxu/vista.vim'
+" 快速选择
+Plug 'gcmt/wildfire.vim'
 " undotree
 Plug 'mbbill/undotree'
 " 自动补全插件(支持LSP)
