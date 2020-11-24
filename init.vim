@@ -173,6 +173,7 @@ omap ac <Plug>(coc-classobj-a)
 " -----coc配置
 " -----
 let g:coc_global_extensions = [
+    \ 'coc-calc',
     \ 'coc-highlight',
     \ 'coc-tabnine',
     \ 'coc-git',
@@ -257,15 +258,15 @@ let g:which_key_map['w'] = {
     \ 's': [':Startify', '打开开始界面'],
     \ 'h': [':vsplit', '横向分割窗口'],
     \ 'v': [':split', '纵向分割窗口'],
-    \ 'o': ['only', '仅保留当前窗口'],
-    \ 'q': ['wq', '保存并退出'],
+    \ 'o': [':only', '仅保留当前窗口'],
+    \ 'q': [':wq', '保存并退出'],
     \ }
 let g:which_key_map['b'] = {
     \ 'name' : '+缓冲区',
     \ 'b': [':CocList buffers', '显示所有'],
-    \ 'd': ['bd', '关闭'],
-    \ 'n': ['bnext', '下一个'],
-    \ 'p': ['bprevious', '上一个'],
+    \ 'd': [':bdelete', '关闭'],
+    \ 'n': [':bnext', '下一个'],
+    \ 'p': [':bprevious', '上一个'],
     \ }
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
