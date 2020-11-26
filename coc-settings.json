@@ -60,9 +60,7 @@
     },
     "python.linting.pylintArgs": ["----extension-pkg-whitelist=1xml"],
     "translator.engines": [
-        "youdao",
-        "bing",
-        "haici"
+        "youdao"
     ],
     "snippets.ultisnips.enable": true,
     "snippets.ultisnips.directories": [
