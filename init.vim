@@ -31,9 +31,9 @@ Plug 'puremourning/vimspector'
 " vimspector配置文件模板生成
 Plug 'lmissou/vimspector-template'
 " 主题
-Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
+Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-one'
-Plug 'dracula/vim', { 'as': 'dracula' }
 " 美化底部状态栏
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -68,8 +68,9 @@ call plug#end()
 " -----
 " 设置主题
 set t_Co=256
+syntax enable
 set background=dark
-colorscheme dracula
+colorscheme OceanicNext
 " 开启powerline字体
 let g:airline_powerline_fonts = 1
 " 开启行号显示
@@ -173,6 +174,8 @@ omap ac <Plug>(coc-classobj-a)
 " -----coc配置
 " -----
 let g:coc_global_extensions = [
+    \ 'coc-postfix',
+    \ 'coc-floatinput',
     \ 'coc-calc',
     \ 'coc-highlight',
     \ 'coc-tabnine',
