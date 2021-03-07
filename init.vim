@@ -20,6 +20,9 @@ Plug 'gcmt/wildfire.vim'
 Plug 'mbbill/undotree'
 " 自动补全插件(支持LSP)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" jsx高亮，解决tsx文件没有高亮的问题
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 " 代码片段snippets
 Plug 'honza/vim-snippets'
 " 注释插件
@@ -180,14 +183,12 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-tabnine',
     \ 'coc-git',
-    \ 'coc-template',
     \ 'coc-pairs',
     \ 'coc-omnisharp',
     \ 'coc-go',
     \ 'coc-clangd',
     \ 'coc-actions',
     \ 'coc-css',
-    \ 'coc-bookmark',
     \ 'coc-explorer',
     \ 'coc-gitignore',
     \ 'coc-html',
@@ -199,7 +200,7 @@ let g:coc_global_extensions = [
     \ 'coc-syntax',
     \ 'coc-tasks',
     \ 'coc-translator',
-    \ 'coc-tslint-plugin',
+    \ 'coc-eslint',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ 'coc-vetur',
@@ -277,13 +278,6 @@ let g:which_key_map['f'] = {
     \ 'r': [':CocList mru', '历史文件列表'],
     \ 't': [':CocCommand explorer', '打开目录树'],
     \ 's': [':CocList grep', '全局搜索'],
-    \ }
-let g:which_key_map['m'] = {
-    \ 'name': '+书签',
-    \ 'm': [':CocList bookmark', '书签列表'],
-    \ 'a': [':CocCommand bookmark.toggle', '添加/删除书签'],
-    \ 'p': [':CocCommand bookmark.prev', '上一个书签'],
-    \ 'n': [':CocCommand bookmark.next', '下一个书签'],
     \ }
 let g:which_key_map['l'] = {
     \ 'name': '+编程语言',
