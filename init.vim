@@ -2,7 +2,7 @@
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " 设置leader键
-let g:mapleader=","
+let g:mapleader="\<space>"
 
 " --------------------
 " -----加载插件
@@ -287,7 +287,7 @@ let g:which_key_map['l'] = {
     \ 'F': ['<Plug>(coc-fix-current)', '修复错误'],
     \ }
 " 注册which-key按键映射
-call which_key#register(',', "g:which_key_map")
-nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual ','<CR>
+call which_key#register(g:mapleader, "g:which_key_map")
+nnoremap <silent> <leader> :<c-u>WhichKey '<leader>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<leader>'<CR>
 
