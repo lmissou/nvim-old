@@ -64,6 +64,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " org-mode
 Plug 'jceb/vim-orgmode'
+" dart and flutter
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " --------------------
@@ -76,8 +78,13 @@ set background=dark
 colorscheme OceanicNext
 " 开启powerline字体
 let g:airline_powerline_fonts = 1
-" 开启行号显示
+" 开启行号显示,normal模式使用相对行号,insert模式使用绝对行号
 set number
+augroup relative_numbser
+ autocmd!
+ autocmd InsertEnter * :set norelativenumber
+ autocmd InsertLeave * :set relativenumber
+augroup END
 " 缓冲区未保存时也可以切换到后台
 set hidden
 set updatetime=300
@@ -205,6 +212,7 @@ let g:coc_global_extensions = [
     \ 'coc-vimlsp',
     \ 'coc-vetur',
     \ 'coc-yaml',
+    \ 'coc-flutter-tools',
     \ 'coc-yank']
 " 高亮当前光标所在的symbol
 autocmd CursorHold * silent call CocActionAsync('highlight')
