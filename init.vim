@@ -196,6 +196,7 @@ let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-actions',
     \ 'coc-css',
+    \ 'coc-styled-components',
     \ 'coc-explorer',
     \ 'coc-gitignore',
     \ 'coc-html',
