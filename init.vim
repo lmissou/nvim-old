@@ -48,6 +48,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'editorconfig/editorconfig-vim'
 " 光标快速跳转插件
 Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 " 多光标插件
 Plug 'mg979/vim-visual-multi'
 " 自动切换工作目录
