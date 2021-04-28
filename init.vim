@@ -61,6 +61,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'chiel92/vim-autoformat'
 " 自定义文本对象textobj
 Plug 'kana/vim-textobj-user'
+" fzf
+Plug 'junegunn/fzf.vim'
 " markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " org-mode
@@ -251,7 +253,7 @@ nmap <silent> gr <Plug>(coc-references)
 vnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 nnoremap <silent> <C-T> :<C-u>CocCommand translator.popup<CR>
 " 模糊搜索文件
-noremap <C-p> :CocList files<CR>
+noremap <C-p> :Files<CR>
 " undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " vista
@@ -265,11 +267,12 @@ inoremap jk <Esc>
 nnoremap <leader>q :q<CR>
 let g:which_key_map['q'] = '退出'
 " 模糊搜索vim命令
-nnoremap <leader>: :CocList vimcommands<CR>
+nnoremap <leader>: :Commands<CR>
 let g:which_key_map[':'] = 'vim命令'
 let g:which_key_map['w'] = {
     \ 'name': '+窗口',
     \ 's': [':Startify', '打开开始界面'],
+    \ 'w': [':Windows', '窗口列表'],
     \ 'h': [':vsplit', '横向分割窗口'],
     \ 'v': [':split', '纵向分割窗口'],
     \ 'o': [':only', '仅保留当前窗口'],
@@ -277,17 +280,17 @@ let g:which_key_map['w'] = {
     \ }
 let g:which_key_map['b'] = {
     \ 'name' : '+缓冲区',
-    \ 'b': [':CocList buffers', '显示所有'],
+    \ 'b': [':Buffers', '显示所有'],
     \ 'd': [':bdelete', '关闭'],
     \ 'n': [':bnext', '下一个'],
     \ 'p': [':bprevious', '上一个'],
     \ }
 let g:which_key_map['f'] = {
     \ 'name': '+文件',
-    \ 'f': [':CocList files', '文件列表'],
+    \ 'f': [':Files', '文件列表'],
     \ 'r': [':CocList mru', '历史文件列表'],
     \ 't': [':CocCommand explorer', '打开目录树'],
-    \ 's': [':CocList grep', '全局搜索'],
+    \ 's': [':Rg', '全局搜索'],
     \ }
 let g:which_key_map['l'] = {
     \ 'name': '+编程语言',
